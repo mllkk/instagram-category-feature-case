@@ -1,0 +1,20 @@
+### U.S.-3 As an account owner, I want to be notified when I reach the maximum number of products in a category so that I can manage my content effectively.
+
+#### Description
+Each category has a maximum product limit (50 products). The system prevents adding more products once the limit is reached.
+
+#### Business Rules
+- Maximum product limit per category = 50
+- System must prevent adding products beyond the limit
+- User must be informed when the limit is reached
+
+#### Acceptance Criteria
+##### AC 1 – Successful addition under limit
+- **Given** the category has less than 50 products
+- **When** the user adds a new product
+- **Then** the product is successfully added
+##### AC 2 – Limit reached scenario
+- **Given** the category already has 50 products
+- **When** the user tries to add another product
+- **Then** the system prevents the action
+- **And** the user sees a message: “This category can contain a maximum of 50 products”
