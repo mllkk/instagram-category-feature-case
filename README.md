@@ -1,5 +1,5 @@
 # Instagram Profile Content Categorization Feature
-This repository contains a product case study that explores a feature designed for an Instagram, enabling professional accounts to organize their contents into categories directly on their profile.
+This repository contains a product case study that explores a feature designed for Instagram, enabling professional accounts to organize their contents into categories directly on their profile.
 
 The goal of this feature is to improve product discovery, user experience, and conversion potential within business profiles.
 
