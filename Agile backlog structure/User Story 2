@@ -1,0 +1,28 @@
+### U.S.-2 As an account owner, I want to assign a product to a category so that each product is placed under the correct category. 
+
+#### Description 
+The user can assign a product to a single category from the product list.
+
+#### Business Rules / Functional Details
+- A product can belong to **only one category at a time**
+- If a product is already assigned to a category, assigning it to a new category **replaces the previous assignment**
+- The category’s product list should reflect the change immediately
+- The user can cancel the action without applying changes
+
+##### Technical Notes: System should ensure one-to-one mapping between product and category
+
+#### Acceptance Criteria
+##### AC 1 – Successful assignment
+- **Given** the user selects a product
+- **When** the user assigns it to a category
+- **Then** the product is added to that category
+- **And** the category product list is updated accordingly
+##### AC 2 – Reassignment (overwrite behavior)
+- **Given** the product is already assigned to a category
+- **When** the user assigns it to a different category
+- **Then** the previous category assignment is removed
+- **And** the product is assigned to the new category
+##### AC 3 – Cancel action
+- **Given** the user starts assigning a product to a category
+- **When** the user cancels the action
+- **Then** no changes are applied
