@@ -1,0 +1,28 @@
+### U.S.-1 As an account owner, I want to create a new category so that I can organize my products.
+
+#### Description
+The user can create a new category by entering a category name via the “Add Category” action.
+  
+#### Business Rules / Functional Details
+- Category name is required
+- Category name must be unique
+- Newly created category should be immediately visible in the category list
+- Only authorized account owners can create categories
+
+#### Acceptance Criteria 
+##### AC 1 – Successful creation
+- **Given** the user is on category management screen
+- **When** the user enters a valid category name and clicks “Save”
+- **Then** the category is created and showed in the category list immediately
+##### AC 2 – Empty name validation
+- **Given** the user tries to create a category
+- **When** the category name is empty
+- **Then** an error message “Category name cannot be empty” is displayed
+##### AC 3 – Duplicate category
+- **Given** a category with the same name already exists
+- **When** the user tries to create a new category with that name
+- **Then** the system prevents creation and shows an appropriate error message
+##### AC 4 – Unauthorized access
+- **Given** the user is not authorized
+- **When** they attempt to create a category
+- **Then** the system returns an authorization error and informs the user
