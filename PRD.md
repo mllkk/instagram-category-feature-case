@@ -34,14 +34,6 @@ In summary, Instagram profiles lack a structured way to organize and present con
 3. User selects a category
 4. User browses categorized content
 5. User finds relevant product/content more efficiently
-
-## Success Metrics
-This feature will improve content discoverability on professional profiles, leading to higher engagement and conversion rates.
-Target Metrics:
-- Profile → product/content click-through rate (CTR): +15%
-- Profile dwell time: +20%
-- Product/content views: +25%
-- Conversion rate (e.g., purchase, link click, DM): +10%
   
 ## Requirements
 ### Funtional Requirements
@@ -132,6 +124,41 @@ AC 7.2: The backend should validate the number of products per category and retu
 #### Error:
 AC 7.3: When the limit is exceeded, the product should not be added, and the user should receive a meaningful error message.
 
-# Business Rules
+## Business Rules
+### BR.1: Category Visibility Condition
+Categories should not be displayed on the profile unless they contain at least one product.
 
-# Feature Enhancement
+- A category becomes visible on the profile only after at least one product is assigned to it.
+- Empty categories (with zero products) should remain hidden from end users.
+- This rule ensures that the category section does not appear empty and maintains a meaningful browsing experience.
+  
+### BR.2: Manual Preference Priority
+User-defined manual preferences (e.g., featured or hidden items) should always take precedence over system-generated ordering and recommendations.
+
+- “Hidden” preferences have higher priority than “featured” preferences; meaning hidden products should not be displayed even if they belong to a featured category.
+
+### BR.3: Category and Product Limits
+- A user can create a maximum of 10 categories.
+- Each category can contain a maximum of 50 products.
+- These limits are defined to ensure performance and usability and may be optimized through A/B testing.
+
+### BR.4: Preference Update Frequency
+- User-initiated changes (e.g., feature/hide actions) should be reflected in real-time on the profile and category views.
+- System-generated updates (e.g., default sorting or recommendations) may be processed via daily or weekly batch updates.
+
+### BR.5: Reset to Default Behavior
+- When a user selects “Reset to Default”, all manually configured categories and product preferences should revert to the initial state.
+- The system should ensure consistency between UI and backend, and changes should be reflected immediately on the profile.
+  
+### BR.6: Feature and Hide Logic
+- Featured categories should be displayed at the top of the profile.
+- Hidden products or subcategories should not be displayed under any circumstances, regardless of category status.
+- A user can feature up to 5 categories and hide up to 10 product types at a time.
+
+## Success Metrics
+This feature will improve content discoverability on professional profiles, leading to higher engagement and conversion rates.
+Target Metrics:
+- Profile → product/content click-through rate (CTR): +15%
+- Profile dwell time: +20%
+- Product/content views: +25%
+- Conversion rate (e.g., purchase, link click, DM): +10%
